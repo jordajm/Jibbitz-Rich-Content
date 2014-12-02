@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+.jibbitzContainer {
+width: 960px;
+display: block;
+height: 470px;
+position: relative;
+margin-left: auto;
+margin-right: auto;
+margin-top: 100px;
+}
+
+.topScrollReset {
+width: 960px;
+height: 25px;
+position: absolute;
+top: 0;
+left: 0;
+z-index: 999;
+}
+
+.bottomScrollReset {
+width: 960px;
+height: 15px;
+position: absolute;
+bottom: 0;
+left: 0;
+}
+.jibbitzBackgroundLeft {
+background-image: url("//dl.dropboxusercontent.com/u/213392662/jibbitzContent/jibbitzBackgroundLeft.png");
+background-repeat: no-repeat;
+float:left;
+width: 633px;
+height: 470px;
+position: relative;
+}
+
+.jibbitzBackgroundRight {
+background-image: url("//dl.dropboxusercontent.com/u/213392662/jibbitzContent/jibbitzBackgroundRight.png");
+background-repeat: no-repeat;
+float:left;
+width: 327px;
+height: 470px;
+}
+
+.rightTopInner {
+padding:20px;
+}
+
+.rightBottomInner {
+padding-top: 42px;
+}
+
+.crocsText {
+font-family: "MuseoRounded700";
+font-weight: 700;
+}
+
+.green {
+color: #7ab800;
+}
+
+.jibbitzContainer h1 {
+font-size: 22px;
+}
+
+#personalizeH1 {
+margin: 90px 0 0 0;
+line-height: 23px;
+}
+
+#personalizeP {
+margin: 10px 0 0 0;
+color: #8A8C8E;
+font-size: 13px;
+}
+
+.jibbitzBtn {
+border-top: 1px dotted #8A8C8E;
+height: 50px;
+display: block;
+}
+
+.innerBtn {
+margin: 5px;
+height: 40px;
+width: 317px;
+}
+
+.jibbitzBtn:hover {
+cursor: pointer;
+}
+
+.jibbitzBtn h1 {
+float: left;
+margin: 5px 0 0 30px;
+}
+
+.jibbitzWhite{
+color: white;
+}
+
+.jibbitzGreenBack {
+background-color: #7ab800;
+}
+
+.btnBottom {
+border-bottom: 1px dotted #8A8C8E;
+}
+
+.jibbitzArrows {
+background-image: url('//dl.dropboxusercontent.com/u/213392662/jibbitzContent/jibbitzArrows.png');
+width: 30px;
+height: 32px;
+margin-right: 30px;
+float: right;
+margin-top: 5px;
+}
+
+.whiteArrows {
+background-position: 28px 0;
+}
+
+.greenArrows {
+background-position: 0 0;
+}
+
+.jibbitzRO {
+float:left;
+width: 633px;
+height: 470px;
+background-repeat: no-repeat;
+display: none;
+position: absolute;
+right: 0;
+top: 0;
+}
+
+#regularRO {
+background-image: url("//dl.dropboxusercontent.com/u/213392662/jibbitzContent/jibbitzRegularRO.png");
+}
+
+#lightSoundRO {
+background-image: url("//dl.dropboxusercontent.com/u/213392662/jibbitzContent/jibbitzLightSoundRO.png");
+}
+
+#interactiveRO {
+background-image: url("//dl.dropboxusercontent.com/u/213392662/jibbitzContent/jibbitzInteractiveRO.png");
+}
+
+.jibbitzHidden {
+display: none;
+}
+
+.jibbitzGreenBtn {
+font-size: 16px;
+line-height: 16px;
+text-decoration: none;
+color: #fff;
+font-family: 'MuseoRounded700';
+background: #7ab800;
+padding: 8px 9px 8px 18px;
+text-align: right;
+bottom: 30px;
+right: 20px;
+position: absolute;
+border-radius: 0 20px 20px 0;
+}
+
+#zappar1 {
+float: left;
+margin: 2px;
+}
+
+#zappar2 {
+font-size: 27px;
+float: right;
+margin: 0 5px 2px 10px;
+}
+
+</style>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="jibbitzContainer crocsText" id="jibbitzScrollTarget">
+     <div class="topScrollReset"></div>
+     <div class="jibbitzBackgroundLeft">
+          <img id="jibbitzStatic" src="//dl.dropboxusercontent.com/u/213392662/jibbitzContent/jibbitzStatic.png">
+          <div id="regularRO" class="jibbitzRO"></div>
+          <div id="lightSoundRO" class="jibbitzRO"></div>
+          <div id="interactiveRO" class= "jibbitzRO"></div>
+          <a class="jibbitzGreenBtn jibbitzHidden size_modal" href="#jibbitzScrollTarget"><p id="zappar1">see how Zappar works</p><p id="zappar2">&raquo;</p></a>
+     </div>
+     <div class="jibbitzBackgroundRight">
+          <div class="rightTopInner">
+               <h1 id="personalizeH1" class="green">make it your own &#8212; <br>personalize with Jibbitz<span style="font-size:12px;vertical-align:top">&#8482;</span><br>charms</h1>
+               <p id="personalizeP">Choose from hundreds of designs to customize your Crocs<span style="font-size:8px;vertical-align:top">&#8482</span> clogs.<br><br>They’re fun and easy to add.</p>
+          </div>
+          <div class="rightBottomInner">
+               <div class="jibbitzBtn" id="regularBtn">
+               <div class="innerBtn" id="innerRegularBtn">
+                    <a>
+                         <h1 class="green">regular</h1>
+                         <div class="jibbitzArrows greenArrows" id="regularArrows"></div>
+                    </a>
+               </div>
+               </div>
+               <div class="jibbitzBtn" id="lightSoundBtn">
+               <div class="innerBtn" id="innerLightSoundBtn">
+                    <a>
+                         <h1 class="green">light & sound</h1>
+                         <div class="jibbitzArrows greenArrows" id="lightSoundArrows"></div>
+                    </a>
+               </div>
+               </div>
+               <div class="jibbitzBtn btnBottom" id="interactiveBtn">
+               <div class="innerBtn" id="innerInteractiveBtn">
+                     <a>
+                          <h1 class="green">interactive</h1>
+                          <div class="jibbitzArrows greenArrows" id="interactiveArrows">
+                          </div>
+                     </a>
+               </div>
+               </div>
+          </div>
+     </div>
+     <div class="bottomScrollReset"></div>
+</div>
+
+</body>
+
+<script>
+$(document).ready(function () {
+
+     $('#innerRegularBtn').hover(
+        function(){
+          $('#jibbitzStatic').fadeOut();
+          $('#regularRO').fadeIn();
+          $('#lightSoundRO').fadeOut();
+          $('#interactiveRO').fadeOut();
+          $('.jibbitzBtn').removeClass('jibbitzGreenBack');
+          $('.jibbitzBtn h1').removeClass('jibbitzWhite');
+          $(this).find('h1').addClass('jibbitzWhite');
+          $('.jibbitzGreenBtn').fadeOut();
+          $('#regularBtn').addClass('jibbitzGreenBack');
+          $('.jibbitzArrows').removeClass('whiteArrows');
+          $('#lightSoundArrows').animate({ marginRight: "30px" }, {queue: false});
+          $('#interactiveArrows').animate({ marginRight: "30px" }, {queue: false});
+          $('#regularArrows').removeClass('greenArrows').addClass('whiteArrows').animate({ marginRight: "10px" }, {queue: false});     
+     },
+        function(){
+            $('#lightSoundArrows').animate({ marginRight: "30px" }, {queue: false});
+            $('#interactiveArrows').animate({ marginRight: "30px" }, {queue: false});
+     });
+     $('#innerLightSoundBtn').hover(function(){
+          $('#jibbitzStatic').fadeOut();
+          $('#lightSoundRO').fadeIn();
+          $('#regularRO').fadeOut();
+          $('#interactiveRO').fadeOut();
+          $('.jibbitzBtn').removeClass('jibbitzGreenBack');
+          $('.jibbitzBtn h1').removeClass('jibbitzWhite');
+          $(this).find('h1').addClass('jibbitzWhite');
+          $('.jibbitzGreenBtn').fadeOut();
+          $('#lightSoundBtn').addClass('jibbitzGreenBack');
+          $('.jibbitzArrows').removeClass('whiteArrows');
+          $('#regularArrows').animate({ marginRight: "30px" }, {queue: false});
+          $('#interactiveArrows').animate({ marginRight: "30px" }, {queue: false});
+          $('#lightSoundArrows').removeClass('greenArrows').addClass('whiteArrows').animate({ marginRight: "10px" }, {queue: false});   
+     },
+        function(){
+            $('#regularArrows').animate({ marginRight: "30px" }, {queue: false});
+            $('#interactiveArrows').animate({ marginRight: "30px" }, {queue: false});
+     });
+     $('#innerInteractiveBtn').hover(function(){
+          $('#jibbitzStatic').fadeOut();
+          $('#interactiveRO').fadeIn();
+          $('#lightSoundRO').fadeOut();
+          $('#regularRO').fadeOut();
+          $('.jibbitzBtn').removeClass('jibbitzGreenBack');
+          $('#interactiveBtn').addClass('jibbitzGreenBack');
+          $('.jibbitzBtn h1').removeClass('jibbitzWhite');
+          $(this).find('h1').addClass('jibbitzWhite');
+          $('.jibbitzGreenBtn').fadeIn();
+          $('.jibbitzArrows').removeClass('whiteArrows');
+          $('#regularArrows').animate({ marginRight: "30px" }, {queue: false});
+          $('#lightSoundArrows').animate({ marginRight: "30px" }, {queue: false});
+          $('#interactiveArrows').removeClass('greenArrows').addClass('whiteArrows').animate({ marginRight: "10px" }, {queue: false}); 
+     },
+        function(){
+            $('#regularArrows').animate({ marginRight: "30px" }, {queue: false});
+            $('#lightSoundArrows').animate({ marginRight: "30px" }, {queue: false});
+     });
+     $('.rightTopInner, .topScrollReset, .bottomScrollReset').hover(function(){
+          $('#jibbitzStatic').fadeIn();
+          $('#interactiveRO').fadeOut();
+          $('#lightSoundRO').fadeOut();
+          $('#regularRO').fadeOut();
+          $('.jibbitzBtn').removeClass('jibbitzGreenBack');
+          $('.jibbitzBtn h1').removeClass('jibbitzWhite');
+          $('.jibbitzArrows').removeClass('whiteArrows');
+          $('.jibbitzGreenBtn').fadeOut();
+          $('#regularArrows').animate({ marginRight: "30px" }, {queue: false});
+          $('#lightSoundArrows').animate({ marginRight: "30px" }, {queue: false});
+          $('#interactiveArrows').animate({ marginRight: "30px" }, {queue: false});
+     });
+        
+
+
+
+
+
+// MODAL FOR ZAPPAR JIBBITZ VIDEO  
+        $('.size_modal').size_modal_box();
+
+});        // CLOSING $(document).ready
+
+
+
+
+ (function($){
+
+	$.fn.size_modal_box = function(prop){
+
+                var jibbitzScrollMeasure = $('#jibbitzScrollTarget').offset().top;
+                var leftOffset = ($(window).width()/2)-277;
+              
+//alert(windowWidth);
+		var options = $.extend({
+			height : "328",
+			width : "530",
+			title:"",
+			description: '<iframe src="//player.vimeo.com/video/104630349?title=0&amp;byline=0&amp;portrait=0&amp;color=7ab800" width="480" height="281" frameborder="0" style="margin-top:-25px" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+		//	top: "jibbitzScrollPx",
+		//	left: "30%",
+		},prop);
+				
+		return this.click(function(e){
+			add_block_page();
+			add_popup_box();
+			add_styles();
+			
+			$('.size_modal_box').fadeIn();
+		}); 
+		
+		 function add_styles(){			
+			$('.size_modal_box').css({ 
+				'position':'absolute', 
+				'left':leftOffset + 'px',
+				'top':jibbitzScrollMeasure + 100 + 'px',
+				'display':'none',
+				'height': options.height + 'px',
+				'width': options.width + 'px',
+				'border':'1px solid #fff',
+				'box-shadow': '0px 2px 7px #292929',
+				'-moz-box-shadow': '0px 2px 7px #292929',
+				'-webkit-box-shadow': '0px 2px 7px #292929',
+				'border-radius':'10px',
+				'-moz-border-radius':'10px',
+				'-webkit-border-radius':'10px',
+				'background': '#f2f2f2', 
+				'z-index':'50',
+			});
+			$('.size_modal_close').css({
+				'position':'relative',
+				'top':'-15px',
+				'left':'30px',
+				'float':'right',
+				'display':'block',
+				'height':'50px',
+				'width':'50px',
+				'background': 'url(http://demandware.edgesuite.net/aadb_prd/on/demandware.static/Sites-crocs_us-Site/-/default/v1415790726591/images/close.png) no-repeat',
+			});
+                        /*Block page overlay*/
+			var pageHeight = $(document).height();
+			var pageWidth = $(window).width();
+
+			$('.size_block_page').css({
+				'position':'absolute',
+				'top':'0',
+				'left':'0',
+				'background-color':'rgba(0,0,0,0.6)',
+				'height':pageHeight,
+				'width':pageWidth,
+				'z-index':'10'
+			});
+			$('.size_inner_modal_box').css({
+				'background-color':'#fff',
+				'height':'281px',
+				'width':'480px',
+				'padding':'10px',
+                                'margin': '15px',
+				'border-radius':'10px',
+				'-moz-border-radius':'10px',
+				'-webkit-border-radius':'10px'
+			});
+		}
+		
+		 function add_block_page(){
+			var block_page = $('<div class="size_block_page"></div>');
+						
+			$(block_page).appendTo('body');
+		}
+		 		
+		 function add_popup_box(){
+			 var pop_up = $('<div class="size_modal_box"><a href="#jibbitzScrollTarget" class="size_modal_close"></a><div class="size_inner_modal_box"><h2>' + options.title + '</h2>' + options.description + '</div></div>');
+			 $(pop_up).appendTo('.size_block_page');
+			 			 
+			 $('.size_modal_close').click(function(){
+				$(this).parent().fadeOut().remove();
+				$('.size_block_page').fadeOut().remove();				 
+			 });
+
+                         $('.size_block_page').click(function(){
+				$('.size_modal_box').fadeOut().remove();
+				$(this).fadeOut().remove();				 
+			 });
+		}
+
+		return this;
+	};
+	
+})(jQuery);
+
+</script>
+
+</html>
